@@ -1,0 +1,56 @@
+public class DataStacksederhana {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+    }
+         private String nim;
+         private String nama;
+         private double nilai;
+    void setNim (String nim){
+        this.nim = nim;
+        
+    }
+    String getNim(){
+        return nim;
+    }
+    void setNama (String nama){
+        this.nama = nama;
+        
+    }
+    String getNama(){
+        return nama;
+       
+    }
+    void setNilai (double nilai){
+        this.nilai = nilai;
+    }
+    double getNilai(){
+        return nilai;
+        
+        stack S = new stack(); 
+        
+        S.createEmpty ();        
+        S.printStack ();
+        
+        System.out.println("===");
+        
+        S.push("123", "Putri", 72.52);
+        S.push("123", "Regina", 90.52);
+        S.push("123", "Frida", 79.52);
+        
+        S.printStack();
+        
+        System.out.println("===");
+        
+        S.pop();
+        S.pop();
+        S.printStack();
+        
+        System.out.println("===");
+        return 0;
+
+    }
+}
