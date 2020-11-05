@@ -1,0 +1,23 @@
+**
+ *
+ * @author LENOVO
+ */
+public class QueuStatis {
+    public static void main(String[] args){
+        Queue Q = new Queue();
+        Q.createEmpty();
+        Q.printQueue();
+
+        System.out.println("=======================================");
+
+        Q.add("E31200432", "Putri Regina", 89.88);
+        Q.add("E31200549", "Vrizcha Aulia", 86.99);
+        Q.add("E31201887", "Dimas Rizqi", 88.76);
+
+        Q.del();
+        Q.del();
+        Q.printQueue();
+
+        System.out.println("=======================================");
+    }
+}
