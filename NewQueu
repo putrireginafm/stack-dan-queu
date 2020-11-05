@@ -1,0 +1,97 @@
+public class NewQueu {
+    public static void main(String[]args){        
+    }
+    
+    private int first;
+    private int last;
+    private DataNilai[] data = new DataNilai[12];
+    
+    NewQueu(){
+        for(int a=0; a<12; a++){
+            data [a] = new DataNilai();
+        }
+    }
+    void setFirst(int first){
+        this.first = first;
+    }
+    int getFirst(){
+        return first;
+    }
+    int getLast(){
+        return last;
+    }
+    void createEmpty(){
+        first = -1;
+        last = -1;
+    }
+    boolean isEmpty(){
+        boolean hasil = false;
+        if(first == -1){
+            hasil = true;
+        }
+        return hasil;
+    }
+    boolean isFull(){
+        boolean hasil = false;
+        if(last == 11){
+            hasil = true;
+        }
+        return hasil;
+    }
+    void add(String nim, String nama, double nilai){
+        if(isEmpty()==true){
+            last = 0;
+            first = 0;
+            data[0].setNim(nim);
+            data[0].setNama(nama);
+            data[0].setNilai(nilai);
+        }
+        else {
+            if(isFull()!= true){
+                last = last + 1;
+                data[last].setNim(nim);
+                data[last].setNama(nama);
+                data[last].setNilai(nilai);
+            }
+            else{
+                System.out.println("mohon maaf antrian penuh");
+            } 
+            }  
+        }
+    void del(){
+            if(last == 0){
+                first = -1;
+                last = -1;
+        }
+        else {
+                int a;
+                
+                for (a=(first+1); a <= last; a++){
+                    
+                    data[a-1].setNim(data[a].getNim());
+                    data[a-1].setNama(data[a].getNama());
+                    data[a-1].setNilai(data[a].getNilai());
+                }
+                last = last -1;   
+            }
+        
+    }
+    void printNewQueue (){
+        if(first != -1){
+            System.out.println("========mohon mengisi queue===========");
+            int a;
+            for(a=last; a >= first; a--){
+                System.out.println("==================================");
+                System.out.println("elemen ke-" +a);
+                System.out.println("nim :" +data[a].getNim());
+                System.out.println("nama :" +data[a].getNama());
+                System.out.println("nilai :" +data[a].getNilai());
+            }
+            System.out.println("======================================");
+        }
+        else{
+            System.out.println("queue kosong");
+        }
+    }
+}
+
